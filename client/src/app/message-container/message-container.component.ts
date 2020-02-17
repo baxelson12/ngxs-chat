@@ -22,5 +22,7 @@ export class MessageContainerComponent implements OnInit {
   }
 
   constructor() {}
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.messages);
+  }
 }

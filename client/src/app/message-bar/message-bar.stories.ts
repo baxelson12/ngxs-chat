@@ -5,13 +5,13 @@ export default {
   excludeStories: /.*Data$/
 };
 
-export const actionsData = {
+export const messageBarActionsData = {
   send: action('send')
 };
 
 export const Default = () => ({
   component: MessageBarComponent,
   props: {
-    ...actionsData
+    ...messageBarActionsData
   }
 });
