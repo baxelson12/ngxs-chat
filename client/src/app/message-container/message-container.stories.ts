@@ -79,7 +79,7 @@ export const userData: User = currentUserData;
 export const Default = () => ({
   component: MessageContainerComponent,
   template: `
-    <div class="p-4 bg-gray-500 flex" style="height: 500px">
+    <div class="p-4 bg-gray-300 flex" style="height: 500px">
       <app-message-container
         class="bg-white rounded-lg m-4"
         [user]="user"
