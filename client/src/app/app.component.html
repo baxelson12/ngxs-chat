@@ -1,3 +1,9 @@
 <div class="header">Header</div>
-<div class="sidebar">Sidebar</div>
-<div class="body">Hello, body</div>
+<app-user-container
+  class="sidebar"
+  [users]="users"
+  [selected]="user"
+></app-user-container>
+<app-message-container
+  class="body rounded-tl-lg"
+></app-message-container>
