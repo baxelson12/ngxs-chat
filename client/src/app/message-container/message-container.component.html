@@ -1,2 +1,8 @@
-<div class="window"></div>
-<app-message-bar></app-message-bar>
+<div class="window">
+  <app-message
+    *ngFor="let message of messages"
+    [message]="message"
+    [currentUser]="user"
+  ></app-message>
+</div>
+<app-message-bar (onSend)="onSend()"></app-message-bar>

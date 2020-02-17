@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import { User, Message } from '../models';
 
 @Component({
   selector: 'app-message-container',
@@ -6,10 +13,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-container.component.scss']
 })
 export class MessageContainerComponent implements OnInit {
+  @Input() user: User;
+  @Input() messages: Message[];
+  @Output() sendMessage = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit() {
+  onSend() {
+    this.sendMessage.emit();
   }
 
+  constructor() {}
+  ngOnInit() {}
 }
