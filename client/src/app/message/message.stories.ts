@@ -21,14 +21,6 @@ export const currentUserData: User = {
   sub: 'github|14948219'
 };
 
-export const Default = () => ({
-  component: MessageComponent,
-  props: {
-    message: messageData,
-    currentUser: currentUserData
-  }
-});
-
 export const Sender = () => ({
   component: MessageComponent,
   props: {
