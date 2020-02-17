@@ -1,0 +1,37 @@
+<!-- assign variables for template use -->
+<div
+  *ngIf="{
+    sender: isSender(currentUser, message),
+    msg: message,
+    initial: userInitial(message.from)
+  } as hash"
+  [ngClass]="hash.sender ? 'flex-row-reverse' : ''"
+  class="flex my-4 mx-4"
+>
+  <div class="mr-4">
+    <div
+      *ngIf="!hash.sender"
+      class="rounded-full text-gray-100 font-bold h-10 w-10 bg-green-500 text-center leading-10 flex justify-center"
+    >
+      {{ hash.initial }}
+    </div>
+  </div>
+  <div class="flex-shrink">
+    <div
+      [ngClass]="
+        hash.sender
+          ? 'text-blue-900 bg-blue-200'
+          : 'text-gray-900 bg-gray-200'
+      "
+      class="rounded-lg px-6 py-2 font-light"
+    >
+      {{ hash.msg.content }}
+    </div>
+    <div
+      [ngClass]="hash.sender ? 'text-right' : 'text-left'"
+      class="text-gray-400"
+    >
+      {{ hash.msg.time | date: 'shortTime' }}
+    </div>
+  </div>
+</div>
