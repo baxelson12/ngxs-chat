@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Message } from '../models';
+import { Message, User } from '../models';
 
 @Component({
   selector: 'app-message',
@@ -8,16 +8,15 @@ import { Message } from '../models';
 })
 export class MessageComponent {
   @Input() message: Message;
-  @Input() currentUser: string;
+  @Input() currentUser: User;
 
   constructor() {}
 
-  isSender(user: string, { from }: Message) {
-    console.log(user, from);
-    return user === from;
+  isSender({ nickname }: User, { from }: Message) {
+    return nickname === from;
   }
 
-  userInitial(user: string) {
-    return user[0].toUpperCase();
+  userInitial(name) {
+    return name[0].toUpperCase();
   }
 }
