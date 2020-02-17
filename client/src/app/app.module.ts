@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MessageComponent } from './message/message.component';
 import { UserComponent } from './user/user.component';
+import { MessageContainerComponent } from './message-container/message-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessageComponent,
-    UserComponent
+    UserComponent,
+    MessageContainerComponent
   ],
   imports: [
     BrowserModule,
