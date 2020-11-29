@@ -15,26 +15,22 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/client",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/tailwind.scss"
+              "src/styles.scss"
             ],
-            "scripts": [],
-            "customWebpackConfig": {
-              "path": "extra-webpack.config.js"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -49,7 +45,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -69,12 +64,9 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "client:build",
-            "customWebpackConfig": {
-              "path": "extra-webpack.config.js"
-            }
+            "browserTarget": "client:build"
           },
           "configurations": {
             "production": {
@@ -131,7 +123,6 @@
           }
         }
       }
-    }
-  },
+    }},
   "defaultProject": "client"
 }

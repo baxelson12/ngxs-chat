@@ -1,8 +1,0 @@
-<div class="flex-grow overflow-y-auto">
-  <app-message
-    *ngFor="let message of messages"
-    [message]="message"
-    [currentUser]="user"
-  ></app-message>
-</div>
-<app-message-bar (onSend)="onSend()"></app-message-bar>
